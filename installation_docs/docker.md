@@ -14,7 +14,6 @@
 **Steps to setup**
 1. Fork current repository
 2. Clone the forked repository
-
     ```bash
     git clone git@github.com:<username></username>/CircuitVerse.git --recursive
     ```
