@@ -130,8 +130,14 @@ Rails.application.routes.draw do
   end
 
   # lti
-  scope "lti"  do
-    match 'launch', to: 'lti#launch', via: [:get, :post]
+  scope "lti" do
+      match 'launch', to: 'lti#launch', via: [:get, :post]
+  end
+
+  scope 'lti/v1p3' do
+      get  'jwks',          to: 'v1p3#jwks'
+      post 'oidc/login',    to: 'v1p3#oidc_login'
+      post 'oidc/callback', to: 'v1p3#oidc_callback', as: :lti_v1p3_callback
   end
 
   mount Commontator::Engine => "/commontator"

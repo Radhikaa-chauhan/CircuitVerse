@@ -1,0 +1,2 @@
+class LtiPlatform < ApplicationRecord
+end
